@@ -1,28 +1,47 @@
-
 var numero = document.getElementById("numero");
 var boton = document.getElementById("boton");
 
-boton.onclick = () => numero.textContent = Math.floor(Math.random()*5+1);
+boton.onclick = () => {
+    var random = Math.floor(Math.random()*90+1);
+    numero.textContent = random;
 
-var jugador = document.getElementById("jugador");
-var cpu = document.getElementById("CPU");
+    return random;
+}
 
 
-function createNumbers(player){
-    
+jugador = document.getElementById("jugador");
+cpu = document.getElementById("CPU");
+
+let createNumbers = player => {    
     var randomNumbers = _.shuffle(_.range(1,90));
+    var arrayFinal = [];
 
     for (var i of _.range(0,14)){
         var item = document.createElement("item");
-        item.className = `item ${i}`;
-        item.textContent = randomNumbers[i];
+        var numero = randomNumbers[i];
+
+        item.className = `item item${numero}`;
+        item.textContent = numero;
+        arrayFinal.push(numero);
         randomNumbers.splice(i,1);
         player.appendChild(item);
     }
+
+    return arrayFinal;
 }
 
-createNumbers(jugador);
-createNumbers(cpu);
+var cartonJugador = createNumbers(jugador);
+var cartonCPU = createNumbers(cpu);
 
-function stricke(){
+/*let stricke = carton => {
+    for (let index in carton){
+        let valorDado = boton.onclick();
+        if (index == valorDado){
+            let myItem = document.querySelector(`.item${index}`);
+            console.log(myItem);
+            myItem.style.backgroundColor = "blue";
+        }
+    }
 }
+
+stricke(cartonJugador);*/
