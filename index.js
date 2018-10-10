@@ -1,13 +1,6 @@
 var numero = document.getElementById("numero");
 var boton = document.getElementById("boton");
 
-boton.onclick = () => {
-    var random = Math.floor(Math.random()*90+1);
-    numero.textContent = random;
-
-    return random;
-}
-
 
 jugador = document.getElementById("jugador");
 cpu = document.getElementById("CPU");
@@ -30,18 +23,22 @@ let createNumbers = player => {
     return arrayFinal;
 }
 
+
 var cartonJugador = createNumbers(jugador);
 var cartonCPU = createNumbers(cpu);
 
-/*let stricke = carton => {
-    for (let index in carton){
-        let valorDado = boton.onclick();
+
+boton.onclick = () => {
+    var random = Math.floor(Math.random()*90+1);
+    numero.textContent = random;
+    
+    for (let index in cartonJugador){
+        let valorDado = random;
         if (index == valorDado){
             let myItem = document.querySelector(`.item${index}`);
-            console.log(myItem);
-            myItem.style.backgroundColor = "blue";
+            myItem.style.backgroundColor = "red";
         }
     }
 }
 
-stricke(cartonJugador);*/
+
