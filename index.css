@@ -1,0 +1,58 @@
+
+.container{
+    width:100%;
+    margin:auto;
+    min-height:50vh;
+    display: flex;
+  }
+  
+  .carton{
+    margin:auto;
+    border: 1px solid black;
+    border-radius:10px;
+    box-shadow: 0 0 1px black, 0 0 2px black inset;
+    padding: 5px;
+    width: 60vh;
+    text-align: center;
+  }
+  
+  .dado{
+    margin:auto;
+    width:350px;
+    height: 300px;
+    display:grid;
+    grid-template-rows: 3fr 1fr;
+  }
+  
+  .item{
+    margin:3px;
+    font-size: 30px;
+    border: 1px solid white;
+    border-radius: 5px;
+    box-shadow: 0 0 2px black;
+    width:80px;
+    height:80px;
+    text-aligg:center;
+    
+    display: inline-block;
+  }
+  
+  .numero{
+    border: 1px solid black;
+    box-shadow: 0 0 2px black;
+    margin:5px;
+    border-radius: 10px;
+    font-size: 100pt;
+    text-align:center;
+  }
+  
+  .boton{
+    background: yellowgreen;
+    margin:auto;
+    font-size: 30px;
+  }
+  
+  .button:hover{
+    color : black;
+    box-shadow: 0 0 2pt cyan;
+  }
